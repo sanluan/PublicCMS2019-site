@@ -1,0 +1,1 @@
+{"id":null,"name":"清理三个月以前日志","status":0,"cronExpression":"0 0 1 * ?","description":"每月1号凌晨执行","updateDate":null,"filePath":"/clearLog.task"}
