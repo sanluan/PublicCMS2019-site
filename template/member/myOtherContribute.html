@@ -18,7 +18,7 @@
 					<ul>
 						<#list page.list as a>
 						<li class="underline">
-							<p><label>投稿类型:</label><@cms.placeMetadata path=a.path>${object.alias!}</@cms.placeMetadata><span class="float-right"><label>投稿日期:</label>${a.createDate?date} [<@t.m 'page.status.place.data.'+a.status/>]</span></p>
+							<p><label>投稿类型:</label><@tools.placeMetadata path=a.path>${object.alias!}</@tools.placeMetadata><span class="float-right"><label>投稿日期:</label>${a.createDate?date} [<@t.m 'page.status.place.data.'+a.status/>]</span></p>
 							<p>《${(a.title)!}》</p>
 						</li>
 						<#else>

@@ -30,7 +30,7 @@
 					</form>
 				</#if>
 
-				<@cms.placeMetadata path=path><#assign a=object/></@cms.placeMetadata>
+				<@tools.placeMetadata path=path><#assign a=object/></@tools.placeMetadata>
 				<#if user?has_content&&(a.adminIds)?has_content&&a.adminIds?seq_contains(user.id)>
 					<@cms.placeList path=path advanced=true pageIndex=pageNum count=numPerPage>
 						<#list page.list as a>
@@ -39,7 +39,7 @@
 						<@sys.user ids=t.userIds!><#assign userMap=map!/></@sys.user>
 						<#list page.list as a>
 								<p>
-									<a href="${a.url}" target="_blank">${a.title}</a> ${a.clicks} [${(userMap[a.userId?string].nickName)!}]
+									<a href="${a.url}" target="_blank">${a.title}</a> ${a.clicks} [${(userMap[a.userId?string].nickname)!}]
 							<#if 2=a.status>
 								<a href="${site.dynamicPath}place/check?id=${a.id}&returnUrl=${site.dynamicPath}member/friendlink.html&_csrf=<@tools.csrfToken/>">审核</a> 
 							<#elseif 1=a.status>
